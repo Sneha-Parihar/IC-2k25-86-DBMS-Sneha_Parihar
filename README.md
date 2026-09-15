@@ -1,0 +1,1 @@
+# IC-2k25-86-DBMS-Sneha_Parihar
