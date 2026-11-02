@@ -1,7 +1,6 @@
 ASSIGNMENT 4 - ALL OUTPUTS
 mysql> use placement;
 Database changed
-
 QUES 1:
 mysql> select count(distinct job) as Number_of_Jobs from employees;
 +----------------+
