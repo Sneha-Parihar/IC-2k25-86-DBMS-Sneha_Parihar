@@ -1,0 +1,162 @@
+ASSIGNMENT 4 - ALL OUTPUTS
+mysql> use placement;
+Database changed
+
+QUES 1:
+mysql> select count(distinct job) as Number_of_Jobs from employees;
++----------------+
+| Number_of_Jobs |
++----------------+
+|              3 |
++----------------+
+1 row in set (0.01 sec)
+
+QUES 2:
+mysql> select sum(salary) as Total_Payable_Salary from employees;
++----------------------+
+| Total_Payable_Salary |
++----------------------+
+|               532000 |
++----------------------+
+1 row in set (0.00 sec)
+
+QUES 3:
+mysql> select min(salary) as Minimum_Salary from employees;
++----------------+
+| Minimum_Salary |
++----------------+
+|          42000 |
++----------------+
+1 row in set (0.00 sec)
+
+QUES 4:
+mysql> select max(salary) as Maximum_Salary_of_Programmer from employees where job='Programmer';
++------------------------------+
+| Maximum_Salary_of_Programmer |
++------------------------------+
+|                        60000 |
++------------------------------+
+1 row in set (0.00 sec)
+
+QUES 5:
+mysql> select avg(salary) as average_salary,count(*) as number_of_employees from employees where department_id=90;
++----------------+---------------------+
+| average_salary | number_of_employees |
++----------------+---------------------+
+|     75000.0000 |                   1 |
++----------------+---------------------+
+1 row in set (0.00 sec)
+
+QUES 6:
+mysql> select max(salary) as highest_salary, min(salary) as lowest_salary,sum(salary) as total_salary,round(avg(salary),2) as average_salary from employees;
++----------------+---------------+--------------+----------------+
+| highest_salary | lowest_salary | total_salary | average_salary |
++----------------+---------------+--------------+----------------+
+|          75000 |         42000 |       532000 |       53200.00 |
++----------------+---------------+--------------+----------------+
+1 row in set (0.00 sec)
+
+QUES 7:
+mysql> select job,count(*) from employees group by job;
++--------------+----------+
+| job          | count(*) |
++--------------+----------+
+| Programmer   |        4 |
+| Manager      |        3 |
+| Data Analyst |        3 |
+| NULL         |        4 |
++--------------+----------+
+4 rows in set (0.00 sec)
+
+QUES 8:
+mysql> select max(salary)-min(salary) as salary_difference from employees ;
++-------------------+
+| salary_difference |
++-------------------+
+|             33000 |
++-------------------+
+1 row in set (0.00 sec)
+
+QUES 9:
+mysql> select manager_id, min(salary) as lowest_salary from employees where manager_id is not null group by manager_id order by lowest_salary asc;
++------------+---------------+
+| manager_id | lowest_salary |
++------------+---------------+
+|       1003 |         42000 |
+|       1002 |         45000 |
+|       1007 |         47000 |
+|       1004 |         48000 |
+|       1001 |         50000 |
+|       1008 |         52000 |
+|       1005 |         55000 |
+|       1010 |         58000 |
+|       1006 |         60000 |
+|       1009 |         75000 |
++------------+---------------+
+10 rows in set (0.00 sec)
+
+QUES 10:
+mysql> select department_id ,sum(salary) from employees group by department_id;
++---------------+-------------+
+| department_id | sum(salary) |
++---------------+-------------+
+| NULL          | NULL        |
+|            10 |       50000 |
+|            20 |       45000 |
+|            30 |       42000 |
+|            40 |       48000 |
+|            50 |       55000 |
+|            60 |       60000 |
+|            70 |       47000 |
+|            80 |       52000 |
+|            90 |       75000 |
+|           100 |       58000 |
++---------------+-------------+
+11 rows in set (0.00 sec)
+
+QUES 11:
+mysql> select job,round(avg(salary),2) from employees where job not in ('Programmer') group by job;
++--------------+----------------------+
+| job          | round(avg(salary),2) |
++--------------+----------------------+
+| Manager      |             58333.33 |
+| Data Analyst |             49000.00 |
++--------------+----------------------+
+2 rows in set (0.00 sec)
+
+QUES 12:
+mysql> select min(salary),max(salary),sum(salary),avg(salary) from employees where department_id='90' order by job_id;
++-------------+-------------+-------------+-------------+
+| min(salary) | max(salary) | sum(salary) | avg(salary) |
++-------------+-------------+-------------+-------------+
+|       75000 |       75000 |       75000 |  75000.0000 |
++-------------+-------------+-------------+-------------+
+1 row in set (0.00 sec)
+
+QUES 13:
+mysql> select job_id,max(salary) as maximum_salary from employees group by job_id having max(salary)>=4000;
++--------+----------------+
+| job_id | maximum_salary |
++--------+----------------+
+|    101 |          50000 |
+|    102 |          45000 |
+|    103 |          42000 |
+|    104 |          48000 |
+|    105 |          55000 |
+|    106 |          60000 |
+|    107 |          47000 |
+|    108 |          52000 |
+|    109 |          75000 |
+|    110 |          58000 |
++--------+----------------+
+10 rows in set (0.00 sec)
+
+QUES 14:
+mysql> select department_id,avg(salary) as average_salary,count(*) as employee_count from employees group by department_id having count(*) > 10;
++---------------+----------------+----------------+
+| department_id | average_salary | employee_count |
++---------------+----------------+----------------+
+| NULL          | NULL           |              2 |
+|            20 |     45000.0000 |              2 |
++---------------+----------------+----------------+
+2 rows in set (0.00 sec)
