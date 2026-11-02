@@ -1,0 +1,139 @@
+ASSIGNMENT 3 - ALL OUTPUTS
+mysql> use placement;
+Database changed
+
+==================== QUES 1 ====================
+mysql> select first_name,last_name,salary from employees where salary not between 10000 and 15000;
++------------+-----------+--------+
+| first_name | last_name | salary |
++------------+-----------+--------+
+| John       | Smith     |  50000 |
+| Alice      | Brown     |  45000 |
+| Robert     | Wilson    |  42000 |
+| Emma       | Davis     |  48000 |
+| Michael    | Taylor    |  55000 |
+| Sophia     | Anderson  |  60000 |
+| Daniel     | Thomas    |  47000 |
+| Olivia     | Jackson   |  52000 |
+| James      | White     |  75000 |
+| Mia        | Harris    |  58000 |
++------------+-----------+--------+
+10 rows in set (0.00 sec)
+
+==================== QUES 2 ====================
+mysql> select first_name,last_name,department_id from employees where department_id in (30,100) order by department_id;
++------------+-----------+---------------+
+| first_name | last_name | department_id |
++------------+-----------+---------------+
+| Robert     | Wilson    |            30 |
+| Mia        | Harris    |           100 |
++------------+-----------+---------------+
+2 rows in set (0.00 sec)
+
+==================== QUES 3 ====================
+mysql> select department_id,first_name,last_name,salary from employees where salary not between 10000 and 15000 and department_id in (30,100) order by department_id asc;
++---------------+------------+-----------+--------+
+| department_id | first_name | last_name | salary |
++---------------+------------+-----------+--------+
+|            30 | Robert     | Wilson    |  42000 |
+|           100 | Mia        | Harris    |  58000 |
++---------------+------------+-----------+--------+
+2 rows in set (0.00 sec)
+
+==================== QUES 4 ====================
+mysql> select first_name,last_name,hire_date from employees where hire_date='2022-01-18';
++------------+-----------+------------+
+| first_name | last_name | hire_date  |
++------------+-----------+------------+
+| Sophia     | Anderson  | 2022-01-18 |
++------------+-----------+------------+
+1 row in set (0.00 sec)
+
+==================== QUES 5 ====================
+mysql> select first_name from employees where first_name like '%b%' and first_name like '%c%';
++------------+
+| first_name |
++------------+
+| Jacob      |
+| Cobra      |
++------------+
+2 rows in set (0.00 sec)
+
+==================== QUES 6 ====================
+mysql> select last_name,job,salary from employees where job in ('Programmer','Shipping Clerk') and salary not in (4500,10000,15000);
++-----------+------------+--------+
+| last_name | job        | salary |
++-----------+------------+--------+
+| Smith     | Programmer |  50000 |
+| Davis     | Programmer |  48000 |
+| Anderson  | Programmer |  60000 |
+| Jackson   | Programmer |  52000 |
++-----------+------------+--------+
+4 rows in set (0.00 sec)
+
+==================== QUES 7 ====================
+mysql> select last_name from employees where length(last_name)='6';
++-----------+
+| last_name |
++-----------+
+| Wilson    |
+| Taylor    |
+| Thomas    |
+| Harris    |
++-----------+
+4 rows in set (0.00 sec)
+
+==================== QUES 8 ====================
+mysql> select last_name from employees where last_name like '__e%';
++-----------+
+| last_name |
++-----------+
+| coeman    |
+| greet     |
++-----------+
+2 rows in set (0.00 sec)
+
+==================== QUES 9 ====================
+mysql> select job_designation from employees;
++-----------------+
+| job_designation |
++-----------------+
+| NULL            |
+| NULL            |
+| NULL            |
+| NULL            |
+| NULL            |
+| NULL            |
+| NULL            |
+| NULL            |
+| NULL            |
+| NULL            |
++-----------------+
+10 rows in set (0.00 sec)
+
+==================== QUES 10 ====================
+mysql> select first_name,last_name,salary,round(0.15 * salary) as PF from employees;
++------------+-----------+--------+-------+
+| first_name | last_name | salary | PF    |
++------------+-----------+--------+-------+
+| John       | Smith     |  50000 |  7500 |
+| Alice      | Brown     |  45000 |  6750 |
+| Robert     | Wilson    |  42000 |  6300 |
+| Emma       | Davis     |  48000 |  7200 |
+| Michael    | Taylor    |  55000 |  8250 |
+| Sophia     | Anderson  |  60000 |  9000 |
+| Daniel     | Thomas    |  47000 |  7050 |
+| Olivia     | Jackson   |  52000 |  7800 |
+| James      | White     |  75000 | 11250 |
+| Mia        | Harris    |  58000 |  8700 |
++------------+-----------+--------+-------+
+10 rows in set (0.01 sec)
+
+==================== QUES 11 ====================
+mysql> select first_name,last_name,salary from employees where last_name in ('BLAKE','SCOTT','KING','FORD',' Andorson ','White');
++------------+-----------+--------+
+| first_name | last_name | salary |
++------------+-----------+--------+
+| James      | White     |  75000 |
++------------+-----------+--------+
+1 row in set (0.00 sec)
