@@ -1,0 +1,451 @@
+ASSIGNMENT 2
+
+mysql> create database A2;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> use A2;
+Database changed
+
+mysql> create table employees(employee_id int primary key,first_name varchar(30),last_name varchar(30),
+email varchar(50),phone_number varchar(20),hire_date date,job_id varchar(20),salary decimal(10,2),
+department_id int);
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> INSERT INTO employees
+    -> (employee_id, first_name, last_name, email, phone_number, hire_date, job_id, salary, department_id)
+    -> VALUES
+    -> (101, 'Rahul', 'Sharma', 'rahul.sharma@gmail.com', '9876543201', '2022-01-15', 'IT_PROG', 55000, 60),
+    -> (102, 'Priya', 'Mehta', 'priya.mehta@gmail.com', '9876543202', '2021-03-20', 'IT_PROG', 62000, 60),
+    -> (103, 'Amit', 'Patel', 'amit.patel@gmail.com', '9876543203', '2023-05-10', 'SA_REP', 48000, 80),
+    -> (104, 'Neha', 'Verma', 'neha.verma@gmail.com', '9876543204', '2020-07-18', 'HR_REP', 52000, 40),
+    -> (105, 'Rohan', 'Chauhan', 'rohan.chauhan@gmail.com', '9876543205', '2022-11-05', 'IT_PROG', 65000, 60),
+    -> (106, 'Sneha', 'Parihar', 'sneha.parihar@gmail.com', '9876543206', '2024-02-12', 'IT_PROG', 58000, 60),
+    -> (107, 'Karan', 'Joshi', 'karan.joshi@gmail.com', '9876543207', '2021-09-25', 'SA_REP', 47000, 80),
+    -> (108, 'Pooja', 'Bansal', 'pooja.bansal@gmail.com', '9876543208', '2023-12-01', 'HR_REP', 50000, 40),
+    -> (109, 'Vikas', 'Singh', 'vikas.singh@gmail.com', '9876543209', '2019-04-14', 'IT_PROG', 72000, 60),
+    -> (110, 'Anjali', 'Kapoor', 'anjali.kapoor@gmail.com', '9876543210', '2022-06-22', 'SA_REP', 49000, 80),
+    -> (111, 'Arjun', 'Shetty', 'arjun.shetty@gmail.com', '9876543211', '2020-10-10', 'IT_PROG', 68000, 60),
+    -> (112, 'Kavita', 'Shukla', 'kavita.shukla@gmail.com', '9876543212', '2021-08-17', 'HR_REP', 54000, 40),
+    -> (113, 'Nitin', 'Kher', 'nitin.kher@gmail.com', '9876543213', '2023-01-30', 'SA_REP', 46000, 80),
+    -> (114, 'Riya', 'Chopra', 'riya.chopra@gmail.com', '9876543214', '2024-03-15', 'IT_PROG', 61000, 60),
+    -> (115, 'Mohit', 'Bhardwaj', 'mohit.bhardwaj@gmail.com', '9876543215', '2020-12-20', 'SA_REP', 51000, 80),
+    -> (116, 'Simran', 'Kaur', 'simran.kaur@gmail.com', '9876543216', '2022-04-11', 'HR_REP', 56000, 40),
+    -> (117, 'Varun', 'Bedi', 'varun.bedi@gmail.com', '9876543217', '2023-07-19', 'IT_PROG', 59000, 60),
+    -> (118, 'Nisha', 'Desai', 'nisha.desai@gmail.com', '9876543218', '2021-02-28', 'SA_REP', 53000, 80),
+    -> (119, 'Saurabh', 'Jain', 'saurabh.jain@gmail.com', '9876543219', '2019-09-09', 'IT_PROG', 75000, 60),
+    -> (120, 'Divya', 'Malhotra', 'divya.malhotra@gmail.com', '9876543220', '2024-05-06', 'HR_REP', 57000, 40);
+Query OK, 20 rows affected (0.01 sec)
+Records: 20  Duplicates: 0  Warnings: 0
+
+mysql> select * from employees;
++-------------+------------+-----------+--------------------------+--------------+------------+---------+----------+---------------+
+| employee_id | first_name | last_name | email                    | phone_number | hire_date  | job_id  | salary   | department_id |
++-------------+------------+-----------+--------------------------+--------------+------------+---------+----------+---------------+
+|         101 | Rahul      | Sharma    | rahul.sharma@gmail.com   | 9876543201   | 2022-01-15 | IT_PROG | 55000.00 |            60 |
+|         102 | Priya      | Mehta     | priya.mehta@gmail.com    | 9876543202   | 2021-03-20 | IT_PROG | 62000.00 |            60 |
+|         103 | Amit       | Patel     | amit.patel@gmail.com     | 9876543203   | 2023-05-10 | SA_REP  | 48000.00 |            80 |
+|         104 | Neha       | Verma     | neha.verma@gmail.com     | 9876543204   | 2020-07-18 | HR_REP  | 52000.00 |            40 |
+|         105 | Rohan      | Chauhan   | rohan.chauhan@gmail.com  | 9876543205   | 2022-11-05 | IT_PROG | 65000.00 |            60 |
+|         106 | Sneha      | Parihar   | sneha.parihar@gmail.com  | 9876543206   | 2024-02-12 | IT_PROG | 58000.00 |            60 |
+|         107 | Karan      | Joshi     | karan.joshi@gmail.com    | 9876543207   | 2021-09-25 | SA_REP  | 47000.00 |            80 |
+|         108 | Pooja      | Bansal    | pooja.bansal@gmail.com   | 9876543208   | 2023-12-01 | HR_REP  | 50000.00 |            40 |
+|         109 | Vikas      | Singh     | vikas.singh@gmail.com    | 9876543209   | 2019-04-14 | IT_PROG | 72000.00 |            60 |
+|         110 | Anjali     | Kapoor    | anjali.kapoor@gmail.com  | 9876543210   | 2022-06-22 | SA_REP  | 49000.00 |            80 |
+|         111 | Arjun      | Shetty    | arjun.shetty@gmail.com   | 9876543211   | 2020-10-10 | IT_PROG | 68000.00 |            60 |
+|         112 | Kavita     | Shukla    | kavita.shukla@gmail.com  | 9876543212   | 2021-08-17 | HR_REP  | 54000.00 |            40 |
+|         113 | Nitin      | Kher      | nitin.kher@gmail.com     | 9876543213   | 2023-01-30 | SA_REP  | 46000.00 |            80 |
+|         114 | Riya       | Chopra    | riya.chopra@gmail.com    | 9876543214   | 2024-03-15 | IT_PROG | 61000.00 |            60 |
+|         115 | Mohit      | Bhardwaj  | mohit.bhardwaj@gmail.com | 9876543215   | 2020-12-20 | SA_REP  | 51000.00 |            80 |
+|         116 | Simran     | Kaur      | simran.kaur@gmail.com    | 9876543216   | 2022-04-11 | HR_REP  | 56000.00 |            40 |
+|         117 | Varun      | Bedi      | varun.bedi@gmail.com     | 9876543217   | 2023-07-19 | IT_PROG | 59000.00 |            60 |
+|         118 | Nisha      | Desai     | nisha.desai@gmail.com    | 9876543218   | 2021-02-28 | SA_REP  | 53000.00 |            80 |
+|         119 | Saurabh    | Jain      | saurabh.jain@gmail.com   | 9876543219   | 2019-09-09 | IT_PROG | 75000.00 |            60 |
+|         120 | Divya      | Malhotra  | divya.malhotra@gmail.com | 9876543220   | 2024-05-06 | HR_REP  | 57000.00 |            40 |
++-------------+------------+-----------+--------------------------+--------------+------------+---------+----------+---------------+
+20 rows in set (0.00 sec)
+
+QUES 1:
+mysql> select first_name,last_name from employees;
+
++------------+-----------+
+| first_name | last_name |
++------------+-----------+
+| Rahul      | Sharma    |
+| Priya      | Mehta     |
+| Amit       | Patel     |
+| Neha       | Verma     |
+| Rohan      | Chauhan   |
+| Sneha      | Parihar   |
+| Karan      | Joshi     |
+| Pooja      | Bansal    |
+| Vikas      | Singh     |
+| Anjali     | Kapoor    |
+| Arjun      | Shetty    |
+| Kavita     | Shukla    |
+| Nitin      | Kher      |
+| Riya       | Chopra    |
+| Mohit      | Bhardwaj  |
+| Simran     | Kaur      |
+| Varun      | Bedi      |
+| Nisha      | Desai     |
+| Saurabh    | Jain      |
+| Divya      | Malhotra  |
++------------+-----------+
+20 rows in set (0.00 sec)
+
+QUES 2:
+mysql> select distinct department_id from employees;
+
++---------------+
+| department_id |
++---------------+
+|            60 |
+|            80 |
+|            40 |
++---------------+
+3 rows in set (0.00 sec)
+
+QUES 3:
+mysql> select * from employees order by first_name desc;
+
++-------------+------------+-----------+--------------------------+--------------+------------+---------+----------+---------------+
+| employee_id | first_name | last_name | email                    | phone_number | hire_date  | job_id  | salary   | department_id |
++-------------+------------+-----------+--------------------------+--------------+------------+---------+----------+---------------+
+|         109 | Vikas      | Singh     | vikas.singh@gmail.com    | 9876543209   | 2019-04-14 | IT_PROG | 72000.00 |            60 |
+|         117 | Varun      | Bedi      | varun.bedi@gmail.com     | 9876543217   | 2023-07-19 | IT_PROG | 59000.00 |            60 |
+|         106 | Sneha      | Parihar   | sneha.parihar@gmail.com  | 9876543206   | 2024-02-12 | IT_PROG | 58000.00 |            60 |
+|         116 | Simran     | Kaur      | simran.kaur@gmail.com    | 9876543216   | 2022-04-11 | HR_REP  | 56000.00 |            40 |
+|         119 | Saurabh    | Jain      | saurabh.jain@gmail.com   | 9876543219   | 2019-09-09 | IT_PROG | 75000.00 |            60 |
+|         105 | Rohan      | Chauhan   | rohan.chauhan@gmail.com  | 9876543205   | 2022-11-05 | IT_PROG | 65000.00 |            60 |
+|         114 | Riya       | Chopra    | riya.chopra@gmail.com    | 9876543214   | 2024-03-15 | IT_PROG | 61000.00 |            60 |
+|         101 | Rahul      | Sharma    | rahul.sharma@gmail.com   | 9876543201   | 2022-01-15 | IT_PROG | 55000.00 |            60 |
+|         102 | Priya      | Mehta     | priya.mehta@gmail.com    | 9876543202   | 2021-03-20 | IT_PROG | 62000.00 |            60 |
+|         108 | Pooja      | Bansal    | pooja.bansal@gmail.com   | 9876543208   | 2023-12-01 | HR_REP  | 50000.00 |            40 |
+|         113 | Nitin      | Kher      | nitin.kher@gmail.com     | 9876543213   | 2023-01-30 | SA_REP  | 46000.00 |            80 |
+|         118 | Nisha      | Desai     | nisha.desai@gmail.com    | 9876543218   | 2021-02-28 | SA_REP  | 53000.00 |            80 |
+|         104 | Neha       | Verma     | neha.verma@gmail.com     | 9876543204   | 2020-07-18 | HR_REP  | 52000.00 |            40 |
+|         115 | Mohit      | Bhardwaj  | mohit.bhardwaj@gmail.com | 9876543215   | 2020-12-20 | SA_REP  | 51000.00 |            80 |
+|         112 | Kavita     | Shukla    | kavita.shukla@gmail.com  | 9876543212   | 2021-08-17 | HR_REP  | 54000.00 |            40 |
+|         107 | Karan      | Joshi     | karan.joshi@gmail.com    | 9876543207   | 2021-09-25 | SA_REP  | 47000.00 |            80 |
+|         120 | Divya      | Malhotra  | divya.malhotra@gmail.com | 9876543220   | 2024-05-06 | HR_REP  | 57000.00 |            40 |
+|         111 | Arjun      | Shetty    | arjun.shetty@gmail.com   | 9876543211   | 2020-10-10 | IT_PROG | 68000.00 |            60 |
+|         110 | Anjali     | Kapoor    | anjali.kapoor@gmail.com  | 9876543210   | 2022-06-22 | SA_REP  | 49000.00 |            80 |
+|         103 | Amit       | Patel     | amit.patel@gmail.com     | 9876543203   | 2023-05-10 | SA_REP  | 48000.00 |            80 |
++-------------+------------+-----------+--------------------------+--------------+------------+---------+----------+---------------+
+20 rows in set (0.00 sec)
+
+QUES 4:
+mysql> select first_name,last_name,salary,salary*0.15 as pf from employees;
+
++------------+-----------+----------+------------+
+| first_name | last_name | salary   | pf         |
++------------+-----------+----------+------------+
+| Rahul      | Sharma    | 55000.00 |  8250.0000 |
+| Priya      | Mehta     | 62000.00 |  9300.0000 |
+| Amit       | Patel     | 48000.00 |  7200.0000 |
+| Neha       | Verma     | 52000.00 |  7800.0000 |
+| Rohan      | Chauhan   | 65000.00 |  9750.0000 |
+| Sneha      | Parihar   | 58000.00 |  8700.0000 |
+| Karan      | Joshi     | 47000.00 |  7050.0000 |
+| Pooja      | Bansal    | 50000.00 |  7500.0000 |
+| Vikas      | Singh     | 72000.00 | 10800.0000 |
+| Anjali     | Kapoor    | 49000.00 |  7350.0000 |
+| Arjun      | Shetty    | 68000.00 | 10200.0000 |
+| Kavita     | Shukla    | 54000.00 |  8100.0000 |
+| Nitin      | Kher      | 46000.00 |  6900.0000 |
+| Riya       | Chopra    | 61000.00 |  9150.0000 |
+| Mohit      | Bhardwaj  | 51000.00 |  7650.0000 |
+| Simran     | Kaur      | 56000.00 |  8400.0000 |
+| Varun      | Bedi      | 59000.00 |  8850.0000 |
+| Nisha      | Desai     | 53000.00 |  7950.0000 |
+| Saurabh    | Jain      | 75000.00 | 11250.0000 |
+| Divya      | Malhotra  | 57000.00 |  8550.0000 |
++------------+-----------+----------+------------+
+20 rows in set (0.00 sec)
+
+QUES 5:
+mysql> select employee_id,first_name,last_name,salary from employees order by salary asc;
+
++-------------+------------+-----------+----------+
+| employee_id | first_name | last_name | salary   |
++-------------+------------+-----------+----------+
+|         113 | Nitin      | Kher      | 46000.00 |
+|         107 | Karan      | Joshi     | 47000.00 |
+|         103 | Amit       | Patel     | 48000.00 |
+|         110 | Anjali     | Kapoor    | 49000.00 |
+|         108 | Pooja      | Bansal    | 50000.00 |
+|         115 | Mohit      | Bhardwaj  | 51000.00 |
+|         104 | Neha       | Verma     | 52000.00 |
+|         118 | Nisha      | Desai     | 53000.00 |
+|         112 | Kavita     | Shukla    | 54000.00 |
+|         101 | Rahul      | Sharma    | 55000.00 |
+|         116 | Simran     | Kaur      | 56000.00 |
+|         120 | Divya      | Malhotra  | 57000.00 |
+|         106 | Sneha      | Parihar   | 58000.00 |
+|         117 | Varun      | Bedi      | 59000.00 |
+|         114 | Riya       | Chopra    | 61000.00 |
+|         102 | Priya      | Mehta     | 62000.00 |
+|         105 | Rohan      | Chauhan   | 65000.00 |
+|         111 | Arjun      | Shetty    | 68000.00 |
+|         109 | Vikas      | Singh     | 72000.00 |
+|         119 | Saurabh    | Jain      | 75000.00 |
++-------------+------------+-----------+----------+
+20 rows in set (0.00 sec)
+
+QUES 6:
+mysql> select sum(salary) as 'total salary' from employees;
+
++--------------+
+| total salary |
++--------------+
+|   1138000.00 |
++--------------+
+1 row in set (0.00 sec)
+
+QUES 7:
+mysql> select max(salary) as 'maximum salary',min(salary) as 'minimum salary' from employees;
+
++----------------+----------------+
+| maximum salary | minimum salary |
++----------------+----------------+
+|       75000.00 |       46000.00 |
++----------------+----------------+
+1 row in set (0.00 sec)
+
+QUES 8:
+mysql> select avg(salary) as 'average salary',count(*) as 'number of employees' from employees;
+
++----------------+---------------------+
+| average salary | number of employees |
++----------------+---------------------+
+|   56900.000000 |                  20 |
++----------------+---------------------+
+1 row in set (0.00 sec)
+
+QUES 9:
+mysql> select count(*) as 'number of employees' from employees;
+
++---------------------+
+| number of employees |
++---------------------+
+|                  20 |
++---------------------+
+1 row in set (0.01 sec)
+
+QUES 10:
+mysql> select count(distinct job_id) as 'number of jobs' from employees;
+
++----------------+
+| number of jobs |
++----------------+
+|              3 |
++----------------+
+1 row in set (0.00 sec)
+
+QUES 11:
+mysql> select upper(first_name) as 'first_name' from employees;
+
++------------+
+| first_name |
++------------+
+| RAHUL      |
+| PRIYA      |
+| AMIT       |
+| NEHA       |
+| ROHAN      |
+| SNEHA      |
+| KARAN      |
+| POOJA      |
+| VIKAS      |
+| ANJALI     |
+| ARJUN      |
+| KAVITA     |
+| NITIN      |
+| RIYA       |
+| MOHIT      |
+| SIMRAN     |
+| VARUN      |
+| NISHA      |
+| SAURABH    |
+| DIVYA      |
++------------+
+20 rows in set (0.00 sec)
+
+QUES 12:
+mysql> select substring(first_name,1,3) as 'first 3 character' from employees;
+
++-------------------+
+| first 3 character |
++-------------------+
+| Rah               |
+| Pri               |
+| Ami               |
+| Neh               |
+| Roh               |
+| Sne               |
+| Kar               |
+| Poo               |
+| Vik               |
+| Anj               |
+| Arj               |
+| Kav               |
+| Nit               |
+| Riy               |
+| Moh               |
+| Sim               |
+| Var               |
+| Nis               |
+| Sau               |
+| Div               |
++-------------------+
+20 rows in set (0.00 sec)
+
+QUES 13:
+mysql> select 171*214+625 as result;
+
++--------+
+| result |
++--------+
+|  37219 |
++--------+
+1 row in set (0.00 sec)
+
+QUES 14:
+mysql> select concat(first_name,'',last_name) as 'employee name' from employees;
+
++---------------+
+| employee name |
++---------------+
+| RahulSharma   |
+| PriyaMehta    |
+| AmitPatel     |
+| NehaVerma     |
+| RohanChauhan  |
+| SnehaParihar  |
+| KaranJoshi    |
+| PoojaBansal   |
+| VikasSingh    |
+| AnjaliKapoor  |
+| ArjunShetty   |
+| KavitaShukla  |
+| NitinKher     |
+| RiyaChopra    |
+| MohitBhardwaj |
+| SimranKaur    |
+| VarunBedi     |
+| NishaDesai    |
+| SaurabhJain   |
+| DivyaMalhotra |
++---------------+
+20 rows in set (0.01 sec)
+
+QUES 15:
+mysql> select trim(first_name) as 'first_name' from employees;
+
++------------+
+| first_name |
++------------+
+| Rahul      |
+| Priya      |
+| Amit       |
+| Neha       |
+| Rohan      |
+| Sneha      |
+| Karan      |
+| Pooja      |
+| Vikas      |
+| Anjali     |
+| Arjun      |
+| Kavita     |
+| Nitin      |
+| Riya       |
+| Mohit      |
+| Simran     |
+| Varun      |
+| Nisha      |
+| Saurabh    |
+| Divya      |
++------------+
+20 rows in set (0.00 sec)
+
+QUES 16:
+mysql> select first_name,last_name,length(concat(first_name,' ',last_name)) as 'name length' from employees;
+
++------------+-----------+-------------+
+| first_name | last_name | name length |
++------------+-----------+-------------+
+| Rahul      | Sharma    |          12 |
+| Priya      | Mehta     |          11 |
+| Amit       | Patel     |          10 |
+| Neha       | Verma     |          10 |
+| Rohan      | Chauhan   |          13 |
+| Sneha      | Parihar   |          13 |
+| Karan      | Joshi     |          11 |
+| Pooja      | Bansal    |          12 |
+| Vikas      | Singh     |          11 |
+| Anjali     | Kapoor    |          13 |
+| Arjun      | Shetty    |          12 |
+| Kavita     | Shukla    |          13 |
+| Nitin      | Kher      |          10 |
+| Riya       | Chopra    |          11 |
+| Mohit      | Bhardwaj  |          14 |
+| Simran     | Kaur      |          11 |
+| Varun      | Bedi      |          10 |
+| Nisha      | Desai     |          11 |
+| Saurabh    | Jain      |          12 |
+| Divya      | Malhotra  |          14 |
++------------+-----------+-------------+
+20 rows in set (0.00 sec)
+
+QUES 17:
+mysql> select first_name from employees where first_name regexp '[0-9]';
+
+Empty set (0.02 sec)
+
+QUES 18:
+mysql> select * from employees limit 10;
+
++-------------+------------+-----------+-------------------------+--------------+------------+---------+----------+---------------+
+| employee_id | first_name | last_name | email                   | phone_number | hire_date  | job_id  | salary   | department_id |
++-------------+------------+-----------+-------------------------+--------------+------------+---------+----------+---------------+
+|         101 | Rahul      | Sharma    | rahul.sharma@gmail.com  | 9876543201   | 2022-01-15 | IT_PROG | 55000.00 |            60 |
+|         102 | Priya      | Mehta     | priya.mehta@gmail.com   | 9876543202   | 2021-03-20 | IT_PROG | 62000.00 |            60 |
+|         103 | Amit       | Patel     | amit.patel@gmail.com    | 9876543203   | 2023-05-10 | SA_REP  | 48000.00 |            80 |
+|         104 | Neha       | Verma     | neha.verma@gmail.com    | 9876543204   | 2020-07-18 | HR_REP  | 52000.00 |            40 |
+|         105 | Rohan      | Chauhan   | rohan.chauhan@gmail.com | 9876543205   | 2022-11-05 | IT_PROG | 65000.00 |            60 |
+|         106 | Sneha      | Parihar   | sneha.parihar@gmail.com | 9876543206   | 2024-02-12 | IT_PROG | 58000.00 |            60 |
+|         107 | Karan      | Joshi     | karan.joshi@gmail.com   | 9876543207   | 2021-09-25 | SA_REP  | 47000.00 |            80 |
+|         108 | Pooja      | Bansal    | pooja.bansal@gmail.com  | 9876543208   | 2023-12-01 | HR_REP  | 50000.00 |            40 |
+|         109 | Vikas      | Singh     | vikas.singh@gmail.com   | 9876543209   | 2019-04-14 | IT_PROG | 72000.00 |            60 |
+|         110 | Anjali     | Kapoor    | anjali.kapoor@gmail.com | 9876543210   | 2022-06-22 | SA_REP  | 49000.00 |            80 |
++-------------+------------+-----------+-------------------------+--------------+------------+---------+----------+---------------+
+10 rows in set (0.00 sec)
+
+QUES 19:
+mysql> select first_name,last_name,round(salary/12,2) as 'monthly salary' from employees;
+
++------------+-----------+----------------+
+| first_name | last_name | monthly salary |
++------------+-----------+----------------+
+| Rahul      | Sharma    |        4583.33 |
+| Priya      | Mehta     |        5166.67 |
+| Amit       | Patel     |        4000.00 |
+| Neha       | Verma     |        4333.33 |
+| Rohan      | Chauhan   |        5416.67 |
+| Sneha      | Parihar   |        4833.33 |
+| Karan      | Joshi     |        3916.67 |
+| Pooja      | Bansal    |        4166.67 |
+| Vikas      | Singh     |        6000.00 |
+| Anjali     | Kapoor    |        4083.33 |
+| Arjun      | Shetty    |        5666.67 |
+| Kavita     | Shukla    |        4500.00 |
+| Nitin      | Kher      |        3833.33 |
+| Riya       | Chopra    |        5083.33 |
+| Mohit      | Bhardwaj  |        4250.00 |
+| Simran     | Kaur      |        4666.67 |
+| Varun      | Bedi      |        4916.67 |
+| Nisha      | Desai     |        4416.67 |
+| Saurabh    | Jain      |        6250.00 |
+| Divya      | Malhotra  |        4750.00 |
++------------+-----------+----------------+
+20 rows in set (0.00 sec)
