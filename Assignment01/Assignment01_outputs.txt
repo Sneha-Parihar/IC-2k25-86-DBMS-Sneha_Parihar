@@ -1,0 +1,228 @@
+ASSIGNMENT 1 - OUTPUTS
+
+Database changed
+
+QUES 1:
+Query OK, 0 rows affected (0.05 sec)
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| country_id   | int         | YES  |     | NULL    |       |
+| country_name | varchar(40) | YES  |     | NULL    |       |
+| region_id    | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+QUES 2:
+Query OK, 0 rows affected, 1 warning (0.00 sec)
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| country_id   | int         | YES  |     | NULL    |       |
+| country_name | varchar(40) | YES  |     | NULL    |       |
+| region_id    | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+QUES 3:
+Query OK, 0 rows affected (0.01 sec)
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| country_id   | int         | YES  |     | NULL    |       |
+| country_name | varchar(40) | YES  |     | NULL    |       |
+| region_id    | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+QUES 4:
+Query OK, 0 rows affected (0.02 sec)
+Records: 0  Duplicates: 0  Warnings: 0
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| country_id   | int         | YES  |     | NULL    |       |
+| country_name | varchar(40) | YES  |     | NULL    |       |
+| region_id    | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+QUES 5:
+Query OK, 0 rows affected (0.02 sec)
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| country_id   | int         | YES  |     | NULL    |       |
+| country_name | varchar(40) | YES  |     | NULL    |       |
+| region       | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+QUES 6:
+Query OK, 0 rows affected (0.02 sec)
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| job_id     | varchar(10)  | YES  |     | NULL    |       |
+| job_title  | varchar(35)  | YES  |     | NULL    |       |
+| min_salary | decimal(6,0) | YES  |     | NULL    |       |
+| max_salary | decimal(6,0) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+QUES 7:
+Query OK, 0 rows affected (0.02 sec)
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| country_id   | int         | YES  |     | NULL    |       |
+| country_name | varchar(40) | YES  |     | NULL    |       |
+| region_id    | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+QUES 8:
+Query OK, 0 rows affected (0.02 sec)
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| employee_id   | int         | YES  |     | NULL    |       |
+| start_date    | date        | YES  |     | NULL    |       |
+| end_date      | date        | YES  |     | NULL    |       |
+| job_id        | varchar(10) | YES  |     | NULL    |       |
+| department_id | int         | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+QUES 9:
+Query OK, 0 rows affected (0.02 sec)
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| country_id   | int         | YES  | UNI | NULL    |       |
+| country_name | varchar(40) | YES  |     | NULL    |       |
+| region_id    | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.01 sec)
+
+QUES 10:
+Query OK, 0 rows affected (0.02 sec)
++------------+--------------+------+-----+---------+-------+
+| Field      | Type         | Null | Key | Default | Extra |
++------------+--------------+------+-----+---------+-------+
+| job_id     | int          | NO   | PRI | NULL    |       |
+| job_title  | varchar(35)  | NO   |     | NULL    |       |
+| min_salary | decimal(6,0) | YES  |     | 8000    |       |
+| max_salary | decimal(6,0) | YES  |     | NULL    |       |
++------------+--------------+------+-----+---------+-------+
+4 rows in set (0.00 sec)
+
+QUES 11:
+Query OK, 0 rows affected (0.02 sec)
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| country_id   | int         | NO   | PRI | NULL    |       |
+| country_name | varchar(40) | YES  |     | NULL    |       |
+| region_id    | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+QUES 12:
+Query OK, 0 rows affected (0.02 sec)
++--------------+-------------+------+-----+---------+----------------+
+| Field        | Type        | Null | Key | Default | Extra          |
++--------------+-------------+------+-----+---------+----------------+
+| country_id   | int         | NO   | PRI | NULL    | auto_increment |
+| country_name | varchar(40) | YES  |     | NULL    |                |
+| region_id    | int         | YES  |     | NULL    |                |
++--------------+-------------+------+-----+---------+----------------+
+3 rows in set (0.00 sec)
+
+QUES 13:
+Query OK, 0 rows affected (0.02 sec)
++--------------+-------------+------+-----+---------+-------+
+| Field        | Type        | Null | Key | Default | Extra |
++--------------+-------------+------+-----+---------+-------+
+| country_id   | int         | YES  | MUL | NULL    |       |
+| country_name | varchar(40) | YES  |     | NULL    |       |
+| region_id    | int         | YES  |     | NULL    |       |
++--------------+-------------+------+-----+---------+-------+
+3 rows in set (0.00 sec)
+
+QUES 14:
+Query OK, 0 rows affected (0.02 sec)
++---------------+-------------+------+-----+---------+-------+
+| Field         | Type        | Null | Key | Default | Extra |
++---------------+-------------+------+-----+---------+-------+
+| employee_id   | int         | NO   | PRI | NULL    |       |
+| start_date    | date        | YES  |     | NULL    |       |
+| end_date      | date        | YES  |     | NULL    |       |
+| job_id        | varchar(10) | YES  | MUL | NULL    |       |
+| department_id | int         | YES  |     | NULL    |       |
++---------------+-------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+QUES 15:
+Query OK, 0 rows affected (0.01 sec)
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| employee_id   | decimal(6,0) | NO   | PRI | NULL    |       |
+| first_name    | varchar(20)  | YES  |     | NULL    |       |
+| last_name     | varchar(25)  | NO   |     | NULL    |       |
+| email         | varchar(25)  | NO   |     | NULL    |       |
+| phone_number  | varchar(20)  | YES  |     | NULL    |       |
+| hire_date     | date         | NO   |     | NULL    |       |
+| job_id        | varchar(10)  | NO   |     | NULL    |       |
+| salary        | decimal(8,2) | YES  |     | NULL    |       |
+| commission    | decimal(2,2) | YES  |     | NULL    |       |
+| manager_id    | decimal(6,0) | YES  |     | NULL    |       |
+| department_id | decimal(4,0) | YES  | MUL | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
+QUES 16:
+Query OK, 0 rows affected (0.02 sec)
++---------------+--------------+------+-----+---------+-------+
+| Field         | Type         | Null | Key | Default | Extra |
++---------------+--------------+------+-----+---------+-------+
+| employee_id   | decimal(6,0) | NO   | PRI | NULL    |       |
+| first_name    | varchar(20)  | YES  |     | NULL    |       |
+| last_name     | varchar(25)  | NO   |     | NULL    |       |
+| email         | varchar(25)  | NO   |     | NULL    |       |
+| phone_number  | varchar(20)  | YES  |     | NULL    |       |
+| hire_date     | date         | NO   |     | NULL    |       |
+| job_id        | varchar(10)  | NO   | MUL | NULL    |       |
+| salary        | decimal(8,2) | YES  |     | NULL    |       |
+| commission    | decimal(2,2) | YES  |     | NULL    |       |
+| manager_id    | decimal(6,0) | YES  |     | NULL    |       |
+| department_id | decimal(4,0) | YES  | MUL | NULL    |       |
++---------------+--------------+------+-----+---------+-------+
+11 rows in set (0.00 sec)
+
+QUES 17:
+Query OK, 0 rows affected (0.00 sec)
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| employee_id | int          | NO   | PRI | NULL    |       |
+| first_name  | varchar(20)  | YES  |     | NULL    |       |
+| last_name   | varchar(25)  | NO   |     | NULL    |       |
+| job_id      | int          | NO   | MUL | NULL    |       |
+| salary      | decimal(8,2) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+QUES 18:
+Query OK, 0 rows affected (0.01 sec)
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| employee_id | int          | NO   | PRI | NULL    |       |
+| first_name  | varchar(20)  | YES  |     | NULL    |       |
+| last_name   | varchar(25)  | NO   |     | NULL    |       |
+| job_id      | int          | NO   | MUL | NULL    |       |
+| salary      | decimal(8,2) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
